@@ -86,4 +86,3 @@ while belepve:
             belepve = False
             belepes()
 
-#éasdklfj
