@@ -4,9 +4,8 @@ mennyi = int(input("Hány profilt akarsz csinálni: "))
 valid_felh_jelsz = False
 #változókat hozok létre
 
-while len(profilok.values()) < mennyi: 
+while len(profilok.values()) < mennyi:
     felh_nev = input("Írd be a felhasználónevet: ".strip())
-    valid_felh_jelsz = False
     if felh_nev in profilok.keys():
         print("Ez a felhasználónév már foglalt.")
     elif "." in felh_nev or " " in felh_nev or felh_nev == "":
@@ -21,6 +20,7 @@ while len(profilok.values()) < mennyi:
             acces = input("Milyen típusú profilod lesz? Admin: 'a' vagy User: 'u': ")
             if acces == "a":
                 admin = True
+            if len(profilok.values()) == mennyi:
                 valid_felh_jelsz = True
     print(profilok, len(profilok.values()))
     '''if acces == "a":
@@ -67,17 +67,17 @@ def belepes():
                     print("Sajnálom többet nem próbálkozhatsz. :(")
         belep_keres = False
 #ha van akkor bekérjük a jelszavát, ha nem jó a jelszó újrakérjük és egygyel kevesebb próbálkozása marad
-belepes()
+
 belepve = True
 while belepve:
     if acces == "a":
         mi_kell = input(felh_nev + "(admin)> ")
         if mi_kell == "?" or mi_kell == "help":
-            print("?                            -   kiírja a lehetőségeket")
-            print("help                         -   kiírja a lehetőségeket")
-            print("profilok mutatasa            -   kiírja az összes profil nevét")
-            print("profilok mutatasa jelszoval  -   kiírja az összes profil nevét jelszóval")
-            print("exit                         -   kilép a profilból (de nem törli azt)")
+            print("? - kiírja a lehetőségeket")
+            print("help - kiírja a lehetőségeket")
+            print("profilok mutatasa - kiírja az összes profil nevét")
+            print("profilok mutatasa jelszoval - kiírja az összes profil nevét jelszóval")
+            print("exit - kilép a profilból (de nem törli azt)")
         if mi_kell == "profilok mutatasa":
             print(profilok.keys())
         if mi_kell == "profilok mutatasa jelszoval":
