@@ -85,4 +85,3 @@ while belepve:
         if mi_kell == "exit":
             belepve = False
             belepes()
-
